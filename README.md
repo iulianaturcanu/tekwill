@@ -1,1 +1,3 @@
 # tekwill
+
+`git clone <url>`
