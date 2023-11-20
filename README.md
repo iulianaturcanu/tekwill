@@ -6,6 +6,3 @@ Randul 2
 
 
 ### Randul 3
-
-
-fewjij
