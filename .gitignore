@@ -1,5 +1,5 @@
 #fisiere care nu trebuie sa fie in git
-password.txt
+.env
 
 #DS_Store - macos
 .DS_Store
