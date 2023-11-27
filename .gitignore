@@ -1,0 +1,8 @@
+#fisiere care nu trebuie sa fie in git
+password.txt
+
+#DS_Store - macos
+.DS_Store
+
+# foldere care nu trebuie sa fie in git
+node_modules/
