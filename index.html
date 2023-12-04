@@ -8,49 +8,53 @@
 </head>
 
 <body>
-    <header>
-        <h1 id="main-title">📘 The Code Magazine</h1>
-        <nav>
-            <a href="https://www.google.com" class="google-icon">
-                <img src="google.svg" alt="Google icon" />
-            </a>
-            <a href="https://www.facebook.com">
-                <img src="facebook.svg" alt="Facebook icon" class="facebook-icon" />
-            </a>
-            <button>Acasa</button>
-            <button>Contacte</button>
-        </nav>
-    </header>
-    <h2>The Basic Language of the Web: HTML</h2>
-    <img src="img/laura-jones.jpg" alt="A image with a face woman" width="50">
-    <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
-    <img src="img/post-img.jpg" alt="A image with code" width="30%">
-    <p>All modern websites and web applications are built using three <em>fundamental</em> technologies: HTML, CSS and
-        JavaScript. These are the languages of the web.</p>
-    <p>In this post, let's focus on HTML. We will learn what HTML is all about, and why you too should learn it.</p>
-    <h3>What is HTML?</h3>
-    <p>HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage.
-        It's a markup language that web developers use to structure and describe the content of a webpage (not a
-        programming language).</p>
-    <p>HTML consists of elements that describe different types of content: paragraphs, links, headings, images, video,
-        etc. Web browsers understand HTML and render HTML code as websites.</p>
-    <p>In HTML, each element is made up of 3 parts:</p>
-    <ol>
-        <li>The opening tag</li>
-        <li>The closing tag</li>
-        <li>The actual element</li>
-    </ol>
-    <h3>Why should you learn HTML?</h3>
-    <p>There are countless reasons for learning the fundamental language of the web. Here are 5 of them:</p>
-    <ul>
-        <li>To be able to use the fundamental web dev language</li>
-        <li>To hand-craft beautiful websites instead of relying on tools like Worpress or Wix</li>
-        <li>To build web applications</li>
-        <li>To impress friends</li>
-        <li>To have fun 😃</li>
-    </ul>
-    <p>Hopefully you learned something new here. See you next time!</p>
-    <button id="submit">Submit</button>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+            d="M5.0319 12.1308L3.66522 18.0488C3.6229 18.228 3.63561 18.4158 3.70168 18.5877C3.76775 18.7596 3.88411 18.9075 4.03557 19.0122C4.18703 19.1169 4.36655 19.1735 4.55068 19.1746C4.7348 19.1757 4.91498 19.1212 5.06767 19.0183L10.062 15.6888L15.0564 19.0183C15.2126 19.1221 15.3968 19.1755 15.5843 19.1714C15.7718 19.1673 15.9536 19.1058 16.1051 18.9953C16.2567 18.8849 16.3707 18.7306 16.432 18.5534C16.4933 18.3761 16.4988 18.1844 16.4478 18.0039L14.7702 12.1336L18.9308 8.38944C19.064 8.26946 19.1592 8.11304 19.2045 7.93955C19.2498 7.76605 19.2432 7.58308 19.1856 7.41327C19.1281 7.24345 19.022 7.09424 18.8805 6.98408C18.739 6.87392 18.5683 6.80764 18.3896 6.79345L13.1604 6.37703L10.8976 1.36801C10.8255 1.20672 10.7082 1.06976 10.5599 0.973657C10.4116 0.877554 10.2387 0.826416 10.062 0.826416C9.88532 0.826416 9.7124 0.877554 9.56413 0.973657C9.41586 1.06976 9.29857 1.20672 9.22641 1.36801L6.9636 6.37703L1.73445 6.79254C1.55875 6.80645 1.39079 6.87069 1.25065 6.97757C1.11052 7.08445 1.00414 7.22943 0.944242 7.39518C0.884346 7.56094 0.873472 7.74044 0.91292 7.91221C0.952367 8.08398 1.04047 8.24074 1.16668 8.36376L5.0319 12.1308ZM7.64877 8.16288C7.81249 8.14998 7.96973 8.09328 8.104 7.99871C8.23827 7.90414 8.34462 7.77519 8.41191 7.62538L10.062 3.97387L11.7121 7.62538C11.7794 7.77519 11.8858 7.90414 12.02 7.99871C12.1543 8.09328 12.3115 8.14998 12.4753 8.16288L16.1185 8.45181L13.1182 11.1521C12.8577 11.387 12.7541 11.7484 12.8495 12.0859L13.9988 16.108L10.572 13.8231C10.4216 13.7222 10.2445 13.6683 10.0634 13.6683C9.88224 13.6683 9.70519 13.7222 9.55478 13.8231L5.9739 16.2107L6.937 12.0409C6.97231 11.8876 6.96757 11.7277 6.92323 11.5767C6.8789 11.4257 6.79646 11.2887 6.68384 11.1787L3.89728 8.4619L7.64877 8.16288Z"
+            fill="#F3CD03" />
+    </svg>
+    <!-- Inputs -->
+    <form action="">
+        <label for="username">Username: </label><br />
+        <input type="text" placeholder="Write your name" name="username">
+        <br />
+
+        <label for="email">Email: </label><br />
+        <input type="email" placeholder="Fill in your email" name="email" required>
+        <br />
+
+        <label for="password">Password: </label><br />
+        <input type="password" placeholder="Write a password" name="password" required>
+
+        <br />
+
+        <div style="background-color: aqua;">
+            <input type="radio" name="angajare" value="angajat"> Angajat<br>
+            <input type="radio" name="angajare" value="neangajat"> Neangajat<br>
+            <input type="radio" name="angajare" value="pensionar"> Pensionar<br>
+        </div>
+
+        <section>
+            <input type="checkbox" name="company1" value="Starnet">Starnet<br>
+            <input type="checkbox" name="company2" value="Moldtelecom">Moldtelecom<br>
+            <input type="checkbox" name="company3" value="Orange">Orange<br>
+        </section>
+
+        <!-- Select - dropdown -->
+
+        <label for="age"> Choose age: </label><br>
+        <select name="age">
+            <option value="18-25">18-25</option>
+            <option value="25-35">25-35</option>
+            <option value="35-45">35-45</option>
+            <option value="45-55">45-55</option>
+            <option value="55-65">55-65</option>
+        </select>
+        <br>
+
+        <textarea name="paragraph" rows="5" cols="50"></textarea>
+        <input type="submit" value="Sign in" />
+    </form>
 </body>
 
 </html>
