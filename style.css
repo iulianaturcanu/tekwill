@@ -1,28 +1,79 @@
-h1 {
-    background-color: #FFEFD5;
+/* Selectori */
+/* tag selector */
+
+body {
+    background-color: #c0c0c0;
 }
 
-h1, nav {
-    display: inline;
+section {
+    background-color: #555555;
+    width: 200px;
 }
 
-a {
-    text-decoration: none;
-}
-
-.google-icon img, .facebook-icon {
-    width: 24px;
+input {
     height: 24px;
 }
 
-nav button:last-child {
-    border-left: 1px solid black;
+/* class selector */
+.submit-button {
+    background-color: #909BDC;
 }
 
-nav button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+/* id selector */
+#form-section {
+    border-radius: 8px;
 }
 
+/* Combined selectors */
+input.submit-button {
+    color: #ffffff;
+}
 
+section label {
+    color: #ffffff;
+}
+
+/* Colors - rgb (red, green, blue); rgba(red, green, blue, alpha); hexadecimal #6caractere  */
+/* rgb(255, 255, 255) - white */
+/* rgb(0, 0, 0) - black */
+/* rgba(255, 255, 255, 1) - white with 100% opacity */
+/* hexadecimal  #ffffff - white */
+/* hexadecimal  #000000 - black */
+
+/* pseudo-elements ::before ::after */
+.submit-button::after {
+    content: "\2192";
+}
+
+.submit-button::before {
+    content: "\2190";
+}
+
+/* pseudo-classes :hover :active :focus :first-child :last-child :nth-child(3, even, odd, 3n) */
+.submit-button:hover {
+    background-color: #a6afe3;
+}
+
+.submit-button:active {
+    background-color: #737cb0;
+}
+
+.submit-button:focus {
+    background-color: #5b638d;
+}
+
+/* li:first-child {
+    margin-top: 12px;
+}
+
+li:last-child {
+    margin-bottom: 12px;
+} */
+
+li:nth-child(odd) {
+    margin-bottom: 20px;
+}
+
+body {
+    font-size: 24px;
+}
