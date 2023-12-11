@@ -1,0 +1,28 @@
+h1 {
+    background-color: #FFEFD5;
+}
+
+h1, nav {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+.google-icon img, .facebook-icon {
+    width: 24px;
+    height: 24px;
+}
+
+nav button:last-child {
+    border-left: 1px solid black;
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
