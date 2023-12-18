@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF" -8>
+    <title>Figma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Sprivaten</h2>
+        <nav class="nav-main">
+            <a href="#home-screen" class="nav-item"> Home</a>
+            <a href="#" class="nav-item"> Product</a>
+            <a href="#" class="nav-item"> Pricing</a>
+            <a href="#" class="nav-item"> Contact</a>
+            <a href="#">
+                <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
+            <a href="#">
+                <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
+        </nav>
+    </header>
+
+    <section id="home-screen">
+        <div class="title-container">
+            <h1><strong>We Take Care of<br>the Future </strong></h1>
+            <h4>We know how large objects will act, but things on a small scale.</h4>
+            <button type="text" class="action-btn">Get Qoute Now</button>
+            <button type="text" class="learn-more-btn">Learn More</button>
+        </div>
+        <div class="registration">
+            <h3 class="text-appointment">Book Appointment</h3>
+            <form action="#" class="appointment-form">
+                <label for="name">Name*:</label>
+                <input type="text" placeholder="Full Name">
+                <label for="email">Email*</label>
+                <input type="email" placeholder="example@gmail.com" name="email" required>
+                <label for="departments">Department*:</label>
+                <select required>
+                    <option value="" disabled selected hidden>Please Select</option>
+                    <option>HR</option>
+                    <option>IT</option>
+                </select>
+                <label for="time">Time*:</label>
+                <select required>
+                    <option value="" disabled selected hidden>4:00 Availible</option>
+                    <option>6:00 Availible</option>
+                    <option>8:00 Availible</option>
+                </select>
+                <button type="button" class="submit-appointment">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+</body>
