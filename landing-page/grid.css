@@ -1,0 +1,27 @@
+body {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    /* grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer"; */
+
+}
+
+div {
+    min-height: 100px;
+    min-width: 100px;
+    background-color: #edd48a;
+    border-radius: 18px;
+}
+
+.header {
+    /* grid-area: header; */
+    grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+    background-color: red;
+}
