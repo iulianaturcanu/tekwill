@@ -5,51 +5,166 @@
     <meta charset="UTF" -8>
     <title>Figma</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
-    <header>
-        <h2>Sprivaten</h2>
-        <nav class="nav-main">
-            <a href="#home-screen" class="nav-item"> Home</a>
-            <a href="#" class="nav-item"> Product</a>
-            <a href="#" class="nav-item"> Pricing</a>
-            <a href="#" class="nav-item"> Contact</a>
-            <a href="#">
-                <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
-            <a href="#">
-                <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
-        </nav>
-    </header>
+    <div class="wrapper">
+        <header>
+            <h2>Sprivaten</h2>
+            <nav class="nav-main">
+                <a href="#home-screen" class="nav-item"> Home</a>
+                <a href="#" class="nav-item"> Product</a>
+                <a href="#" class="nav-item"> Pricing</a>
+                <a href="#" class="nav-item"> Contact</a>
+                <a href="#">
+                    <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
+                <a href="#">
+                    <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
+            </nav>
+        </header>
 
-    <section id="home-screen">
-        <div class="title-container">
-            <h1><strong>We Take Care of<br>the Future </strong></h1>
-            <h4>We know how large objects will act, but things on a small scale.</h4>
-            <button type="text" class="action-btn">Get Qoute Now</button>
-            <button type="text" class="learn-more-btn">Learn More</button>
+        <section id="home-screen">
+            <div class="title-container">
+                <h1><strong>We Take Care of<br>the Future </strong></h1>
+                <h4>We know how large objects will act, but things on a small scale.</h4>
+                <button type="text" class="action-btn">Get Qoute Now</button>
+                <button type="text" class="learn-more-btn">Learn More</button>
+            </div>
+            <div class="registration">
+                <h3 class="text-appointment">Book Appointment</h3>
+                <form action="#" class="appointment-form">
+                    <label for="name">Name*:</label>
+                    <input type="text" placeholder="Full Name">
+                    <label for="email">Email*</label>
+                    <input type="email" placeholder="example@gmail.com" name="email" required>
+                    <label for="departments">Department*:</label>
+                    <select required>
+                        <option value="" disabled selected hidden>Please Select</option>
+                        <option>HR</option>
+                        <option>IT</option>
+                    </select>
+                    <label for="time">Time*:</label>
+                    <select required>
+                        <option value="" disabled selected hidden>4:00 Availible</option>
+                        <option>6:00 Availible</option>
+                        <option>8:00 Availible</option>
+                    </select>
+                    <button type="button" class="submit-appointment">Book Appointment</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <section id="choose-us">
+        <div class="feature-container">
+            <div class="feature-title">
+                <img src="img/feature-1.svg" alt="Feature 1">
+                <h5>Web Development</h5>
+            </div>
+            <div class="feature-description">
+                <ul>
+                    <li>The best products start
+                        with Figma</li>
+                    <li>Design with real data</li>
+                    <li><a>Learn more</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="registration">
-            <h3 class="text-appointment">Book Appointment</h3>
-            <form action="#" class="appointment-form">
-                <label for="name">Name*:</label>
-                <input type="text" placeholder="Full Name">
-                <label for="email">Email*</label>
-                <input type="email" placeholder="example@gmail.com" name="email" required>
-                <label for="departments">Department*:</label>
-                <select required>
-                    <option value="" disabled selected hidden>Please Select</option>
-                    <option>HR</option>
-                    <option>IT</option>
-                </select>
-                <label for="time">Time*:</label>
-                <select required>
-                    <option value="" disabled selected hidden>4:00 Availible</option>
-                    <option>6:00 Availible</option>
-                    <option>8:00 Availible</option>
-                </select>
-                <button type="button" class="submit-appointment">Book Appointment</button>
-            </form>
+        <div class="feature-container">
+            <div class="feature-title">
+                <img src="img/feature-1.svg" alt="Feature 1">
+                <h5>Web Development</h5>
+            </div>
+            <div class="feature-description">
+                <ul>
+                    <li>The best products start
+                        with Figma</li>
+                    <li>Design with real data</li>
+                    <li><a>Learn more</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="feature-container">
+            <div class="feature-title">
+                <img src="img/feature-1.svg" alt="Feature 1">
+                <h5>Web Development</h5>
+            </div>
+            <div class="feature-description">
+                <ul>
+                    <li>The best products start
+                        with Figma</li>
+                    <li>Design with real data</li>
+                    <li><a>Learn more</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="spinner"></div> -->
+    </section>
+    <section id="intro-video">
+        <div class="container-business-service">
+            <img src="img/office-photo.png" alt="office-photo" class="office-photo">
+            <img src="img/button.svg" alt="button" class="play-button">
         </div>
     </section>
+    <section id="contact-us">
+        <div class="form-container">
+            <h5>Contact us</h5>
+            <h2>Make an appointment</h2>
+            <form action="" class="contact-form" id="AppointmentForm">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="example@gmail.com">
+                <select name="" id="">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+                <select name="" id="">
+                    <option value="option3">Option 4</option>
+                    <option value="option4">Option 5</option>
+                </select>
+                <input type="text">
+                <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+            </form>
+            <button type="submit" form="AppointmentForm" class="submit-btn">Book appointment</button>
+        </div>
+    </section>
+    <footer>
+        <section class="footer-container">
+            <div>
+                <h5>Company Info</h5>
+                <a>About Us</a>
+                <a>Carrier</a>
+                <a>We are hiring</a>
+                <a>Blog</a>
+            </div>
+            <div>
+                <h5>Company Info</h5>
+                <a>About Us</a>
+                <a>Carrier</a>
+                <a>We are hiring</a>
+                <a>Blog</a>
+            </div>
+            <div>
+                <h5>Company Info</h5>
+                <a>About Us</a>
+                <a>Carrier</a>
+                <a>We are hiring</a>
+                <a>Blog</a>
+            </div>
+            <div>
+                <h5>Company Info</h5>
+                <a>About Us</a>
+                <a>Carrier</a>
+                <a>We are hiring</a>
+                <a>Blog</a>
+            </div>
+            <div>
+                <h5>Company Info</h5>
+                <div>
+                    <input type="text">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
