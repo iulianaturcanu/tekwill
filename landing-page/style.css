@@ -10,6 +10,7 @@
     --gap-size: 20px;
 
     --primary-color: #FFA62B;
+    --background-color: #252B42;
 }
 
 a {
@@ -24,7 +25,11 @@ header {
     justify-content: space-around;
     align-items: baseline;
     margin-bottom: 80px;
-    margin-top: 40px;
+    padding-top: 40px;
+}
+
+.flex {
+    display: flex;;
 }
 
 .nav-main .nav-item {
@@ -46,7 +51,8 @@ section#home-screen {
 
 
 .registration {
-    min-width: 380px;
+    display: flex;
+    width: 20%;
     padding: 40px;
     flex-direction: column;
     align-items: center;
@@ -80,6 +86,164 @@ body {
     width: 100%;
 }
 
+
+.wrapper {    
+    background-image: url('img/background-photo.png');
+    background-size: cover;
+    background-position: center top;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   color: #111010;
+   width: 100%;
+   padding-bottom: 40px;
+}
+
+section#choose-us {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    padding: 80px 0;
+}
+
+.feature-container {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: #D9EDFF;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.feature-container:hover {
+    box-shadow: -5px -5px 10px #888888, 5px 5px 10px #FFA62B;
+}
+
+.feature-title {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-description {
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #A9D6FF;
+    transition: background-color 1s ease-in;
+}
+
+.feature-description:hover {
+    background-color: #D9EDFF;
+}
+
+.feature-container li {
+    list-style-type: "- ";
+}
+
+.feature-container li:last-of-type {
+    list-style-type: none;
+    color: #00A0C1;
+    cursor: pointer;
+    margin: 8px 8px 8px -8px;
+}
+/* box-shadow: offset-x offset-y blur-radius color */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid #FFA62B;
+    border-top: 5px solid var(--background-color);
+    animation: spin 5s linear infinite;
+}
+
+section#intro-video {
+    background: linear-gradient(
+        to bottom, 
+        var(--background-color) 0%,
+        var(--background-color) 50%,
+        #16697A 50%,
+        #16697A 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.container-business-service {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.office-photo {
+    position: relative;
+    width: 80%;
+}
+
+section#contact-us {
+    background-color: var(--background-color);
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    width: 60%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 30%);
+    grid-template-rows: repeat(4, 50px);
+    gap: 20px;
+}
+
+.contact-form input:last-child {
+    grid-area: 3/1/5/3;
+} 
+
+.form-container * {
+    border-radius: 4px;
+}
+
+.submit-btn {
+    margin-top: 24px;
+    width: 218px;
+    height: 58px;
+    border-radius: 4px;
+    background-color: #FFA62B;
+    color: #ffffff;
+}
+
+
 @media (max-width: 768px) {
     .nav-item {
         display: none;
@@ -94,6 +258,29 @@ body {
         max-width: 400px;
         margin-bottom: 40px;
     }
+
+    section#choose-us {
+        flex-direction: column;
+    }
+
+    .feature-container {
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .registration {
+        width: 72%;
+    }
+
+    .contact-form {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(6, 40px);
+        gap: 12px;
+    }
+
+    .contact-form input:last-child {
+        grid-area: 5/1/7/2;
+    }
 }
 
 @media (max-width: 480px) {
@@ -101,4 +288,25 @@ body {
     .registration {
         min-width: 220px;
     }
+}
+
+@media (min-width: 1200px) {
+    .feature-container {
+        width: 20%;
+    }
+}
+
+footer {
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    display: flex;
+    gap: 60px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #ffffff;
 }
