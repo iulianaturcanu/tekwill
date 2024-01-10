@@ -78,11 +78,11 @@ body {
     margin: 0;
     background-image: url('background-photo.png');
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     color: #111010;
     width: 100%;
+    height: 100vh;
 }
 
 
