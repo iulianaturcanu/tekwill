@@ -1,99 +1,148 @@
-// Operatori
-// + , -, *, /, % (modulo, restul impartirii)
-// console.log(35 % 10);
-// = este assign operator
+// if (condition) {
+//   // Code to execute if the condition is true
+//   console.log("gereg");
+// } else {
+//   // Code to execute if the condition is false
+// }
 
-const price = 40; // hardcoding
-const oranges = 5;
-const totalPrice = price * oranges;
-// console.log(totalPrice); //200
+// if (condition) console.log('Condition is true')
+// else console.log('Condition is false');
 
-// Operator precedence
-// d = d1+ d2
-// d = v1*t + v2*t 
-// redundancy
+// 1. Write a program that determines whether a given number is positive or not.
+// const number = 5;
+// if (number > 0) console.log('The number is positive');
+// if (number < 0) console.log('The number is negative');
+// if (number === 0) console.log('the number is 0');
 
-// Operatorul de incrementare/decrementare (++/--)
-// counter 
-let counter = 0;
-// Cumparatura
-counter++; // echivalent cu counter = counter + 1;
-// console.log(counter);
+// 2. Write a program that checks if a number is even or odd.
+const number = 12;
+// 5/2 = 2 cu rest 1 => numarul este impar
+if (number % 2 === 0) console.log("Numarul este par");
+else console.log("Numarul este impar");
 
-// Ridicarea la putere (**)
-const a = 5 ** 2;
-// console.log(a);
+if (number % 2 === 1) console.log("Numarul este impar");
+else console.log("Numarul este par");
 
-// Equality operator (==) true/false 
-// console.log(4 == "4"); // true
+if (number % 2 === 0) console.log("Numarul este par");
+if (number % 2 === 1) console.log("Numarul este impar");
 
-// Strict equality operator (===) true/false
-// console.log(4 === '4'); // false
+// 3. Write a program to determine the greater of two numbers
 
-// Falsy values: 0, -0, NaN, null, undefined, false, empty string ('', "")
-// console.log(false == ""); // true
+const number1 = 5;
+const number2 = 10;
+if (number1 > number2) console.log('Number 1 is greater than number 2');
+else if (number1 === number2) console.log("Number 1 is the same as number 2");
+else console.log("Number 2 is greater than number 1");
 
-//Truthy values
-// console.log(Boolean("nio")); // true
+// femei/barbati/copii/altele
+const input = "femei";
 
-// Type conversion - folosim functii predefinite de js pentru convirtire de date
-// Boolean(), String(), Number()
+// if (input === "femei") console.log('Haine pentru femei');
+// else if (input === 'barbati') console.log('Haine pentru barbati');
+// else if (input === 'copii') console.log('Haine pentru copii');
+// else console.log('Altele');
 
-// console.log(Number('fnerfn'));
-// console.log(typeof String(true)); // "true"
+// switch (input) {
+//     case 'femei':
+//         console.log('Haine pentru femei');
+//         break;
+//     case 'barbati':
+//         console.log('Haine pentru barbati');
+//         break;
+//     case 'copii':
+//         console.log('Haine pentru copii');
+//         break;
+//     default: 
+//         console.log('Altele');
+// }
 
-// const inputYear = "2008";
-// const userAge = 2024 - Number(inputYear);
-// console.log(userAge);
-// const eligibleAge = 18;
+if (input === "femei" || input === 'barbati') console.log('Haine unisex');
+else if (input === 'copii') console.log('Haine pentru copii');
+else console.log('Altele');
 
-// console.log(userAge >= eligibleAge);
-
-// 2024-1991 = 33
-// 33 >= 18 ? true/false
-
-// Logic Operators
-// Operatorul de negare (!)
-// console.log(5>2, !(5>2), !3>2);
-
-// AND (&&)
-const age = 25;
-let hasLicence; // false
-// console.log("Poate persoana data sa conduca masina? ");
-// console.log(age >= 18 && hasLicence);
-if (age >= 18 && hasLicence) {
-    console.log('Persoana data poate conduce');
-} else {
-    console.log("Persoana data nu indeplineste conditiile pentru a conduce");
+switch (input) {
+    case 'femei':
+    case 'barbati':
+        console.log('Haine pentru oameni maturi');
+        break;
+    case 'copii':
+        console.log('Haine pentru copii');
+        break;
+    default: 
+        console.log('Altele');
 }
 
-// console.log(age >= 18 + hasLicence);
-// console.log(18 + hasLicence);
-// 1. 18 + hasLicence
-//2. 18 + Number(hasLicence) = 18
-// 3. age >= 18 - true
+// Avem nevoie sa scriem programul pentru fiecare zi a saptamanii
+const day = "Monday";
+switch (day) {
+    case 'Monday':
+    case 'Wednesday':
+    case 'Friday':
+        console.log('Frontend course');
+        break;
+    case 'Tuesday':
+        console.log('Swimming lessons');
+        break;
+    default: 
+        console.log('Relax days');
+}
 
-const isPasswordCorrect = true;
-const isEmailCorrect = true;
+// 4. Write a program that assigns a letter grade based on a numerical grade.
+const score = 67;
+let grade;
 
-// console.log("Poate utilizatorul sa se conecteze? ", isPasswordCorrect && isEmailCorrect);
+if (score >= 95) {
+    grade = "A";
+} else if (score >= 85) {
+    grade = "B";
+} else if (score >= 70) {
+    grade = "C";
+} else if (score > 60) {
+    grade = "D";
+} else {
+    grade = "F";
+}
 
-// OR (||)
-// const age = 16;
-// const hasParentConsent = true;
-// console.log(age >= 18 || hasParentConsent);
+console.log("Grade: " + grade);
 
-// const count = 0;
-// const limit = 10;
-// console.log((count == 0) && (limit < 20)); // true
-// console.log(count == 0 && limit < 20); // true
-// console.log((limit > 20) || (count < 5)); // true
-// console.log(!(count == 12)); // true
-// console.log(!( ((count < 10) || (x < y)) && (count >= 0) )); // false
+switch(true) {
+    case score >= 95:
+        grade = "A";
+        break;
+    case score >= 85:
+        grade = "B";
+        break;
+    case score >= 70:
+        grade = "C";
+        break;
+    case score > 60:
+        grade = "D";
+        break;
+    default:
+        grade = "F";
+};
 
-// Assignment Operators (=, -=, +=, /=, *=)
-// let x = 4;
-// x -= 2; // x = x - 2
-// console.log(x); // x = 2
-// x *= 3; // x = 2 * 3;
-// console.log(x); // 6
+console.log("Grade: " + grade);
+
+// 5. Write a program that determines if a year is a leap year.
+// 1. divibil cu 4 - year % 4 === 0
+// 2. Daca se imparte la 400 sau nu se imparte la 100 cu rest
+// year % 400 === 0 || year % 100 !== 0
+
+// (year % 4 === 0 && year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)
+// if (year % 4 === 0 && (year % 400 === 0 || year % 100 !== 0)) {
+//     console.log(year + "An bisect");
+// } else {
+//     console.log(year + "nu este bisect");
+// }
+
+// numele de variabile pentru boolean trebuie raspunda la intrebarea da sau nu
+// isConnected, isActive, hasChildren, hasPermissions
+// Ternary Operator (conditional operator)
+const age = 19;
+const isAdult = age >= 18 ? "Yes": "No";
+console.log(isAdult);
+
+//Ecmascript (ES)
+// Deprecated
+// Changelog
