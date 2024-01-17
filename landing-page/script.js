@@ -1,132 +1,108 @@
-// La orice numar adauga + 12%
-function addTaxes(base) {
-    if (base < 2000) {
-        return (base * 1.1).toFixed(2);
-    } else {
-        return (base * 1.12).toFixed(2);
-    }
+// Tipuri de date simple - number, string, boolean, undefined, null
+// Tipuri de date structarate/complexe - objects, arrays (tablouri, matrice)
+const animals = ['cat','dog' ,'lion','chicken']; // 0 - cat, 1 - dog, 2 - lion, 3 - chicken
+const animal = 'cat';
+
+const names = ['Avie', 'Ben', 'Tom'];
+console.log(names[0], names[1], names[2]);
+const firstEmployer = 'Avie';
+const secondEmployer = 'Ben';
+
+// for loop 
+// for (initializare; conditie; regula de incrementare) {
+//     // codul care vrem sa-l executam la fiecare iteratie
+// }
+
+// i++ analog pentru i = i + 1;
+console.log(animals.length); // incepe numerotarea de la 1 
+// iteratia 1 pentru i = 0
+// iteratia 2 pentru i = 1
+// iteratia 3 pentru i = 2
+// iteratia 4 pentru i = 3 A
+// iteratia 5 se verifica 4 < 4 F
+for (let i = 0; i < animals.length; i++) {
+    console.log(animals[i]);
 }
 
-// console.log(base); // eroare 
-
-// rent + 12% = 1120
-const rent = 1000;
-console.log(addTaxes(rent)); // rent + 12%
-const salary = 10000;
-console.log(addTaxes(salary)); // salary + 12%
-
-
-// Arrow function
-const powerTwo = (base) => {
-    return base * base;
+for (let i = 1; i <= animals.length; i++) {
+    console.log(animals[i]);
 }
 
-// console.log(base * base) // 4
-console.log(powerTwo(10))
+// Metoda - functie asociata cu un obiect, string, arrays, number
 
-// Built in functions javascript
-
-const firstName = "Iuliana";
-console.log(firstName.toUpperCase());
-
-const currentDate = new Date();
-console.log(currentDate);
-
-console.log(Math.pow(3, 3));
-
-// Write a function named tellFortune that:
-// takes 4 arguments: number of children, partner's name, geographic location, job title.
-// outputs your fortune to the screen like so: "You will be a X in Y, and married to Z with N kids."
-// Call that function 3 times with 3 different values for the arguments.
-
-// void - tip de date pentru functie cand nu returneaza nimic
-const tellFortune = (children, partnerName, location, jobTitle) => {
-    if (!children && !partnerName) {
-        return `You will be a ${jobTitle} in ${location}`;
-    }
-    if (children === 1) {
-        return `You will be a ${jobTitle} in ${location}, and married to ${partnerName} with ${children} kid.`;
-    } 
-    return `You will be a ${jobTitle} in ${location}, and married to ${partnerName} with ${children} kids.`;
+// addElements() // chemarea functiei
+const text = "exemplu de text";
+const makeUppercase = (text) => {
+    return text;
 }
 
-tellFortune(4, 'Max', 'Australia', 'doctor');
-tellFortune(1, 'Max', 'Australia', 'doctor');
-console.log(tellFortune(undefined, undefined, 'Australia', 'doctor'));
+makeUppercase(text); // functie
+text.toUpperCase(); // metoda
 
-// Create a function called celsiusToFahrenheit:
-// Store a celsius temperature into a variable.
-// Convert it to fahrenheit and output "NN°C is NN°F".
+console.log('---------------------------------------')
+// push() - adaugarea elementelor noi la final de array
+console.log(animals.push('bear'));
+// pop() - elimina elementul de la final de array
+console.log(animals.pop());
+// unshift() - adaugarea elementelor noi la inceput de array
+console.log(animals.unshift('panther'));
+// shift() - elimina elementul de la inceput de array
+console.log(animals.shift());
 
-const celsiusToFahrenheit = (celsius) => {
-    if (celsius) {
-    const fahrenheit = celsius * 9/5 + 32;
-    return `${celsius} grade celsius este echivalent ${fahrenheit} grade fahrenheit`;
-    } else {
-        return "Nu ati introdus variabila de celsius";
-    }
-    // return celsius * 9/5 + 32;
+// indexOf() - returneaza indexul elementului specificat
+const index = animals.indexOf('panther'); // -1 
+console.log(index);
+
+// includes() - pentru a verifica daca elementul este prezent in array
+console.log(animals.includes('panther')); // false
+
+const numbers = [10, 20, 30, 40, 50];
+// 10, 30, 50
+// i += 2 analog i = i + 2;
+for (let i = 0; i < numbers.length; i += 2) {
+    console.log('.............')
+    console.log(i, numbers[i]);
 }
 
-console.log(celsiusToFahrenheit(-10)); // 14
-// Create a function called fahrenheitToCelsius:
-
-// Now store a fahrenheit temperature into a variable.
-// Convert it to celsius and output "NN°F is NN°C."
-
-const fahrenheitToCelsius = (fahrenheit) => {
-    console.log('Far', fahrenheit);
-    if (fahrenheit) {
-    const celsius = (fahrenheit - 32 )* 5/9;
-    console.log('Cel', celsius);
-    return `${fahrenheit} grade celsius este echivalent ${celsius} grade fahrenheit`;
-    } else {
-        return "Nu ati introdus variabila de fahrenheit";
-    }
-}
-// fahrenheit , celsius - variabile locale ale functiei fahrenheitToCelsius
-// console.log(fahrenheit);
-// console.log(celsius);
-console.log(fahrenheitToCelsius(14, 12, 13, 43));
-
-// var, let, const 
-// block (curly braces)
-
-// var - function scoped or globally scoped
-// var - can be reassigned
-
-if (true) {
-    var a = 5;
-    console.log(a);
-}
-console.log(a); // 5
-
-const multiplication = () => {
-    a = 7;
-    console.log(a);
-}
-multiplication();
-
-// let - block scoped  
-// let - can be reassigned
-
-const exampleFunction = () => {
-    let b = 10;
-  
-    if (true) {
-        let b = 30;
-        console.log(b); // 30
-    }
-    console.log(b); // 10
+numbers.length // 5
+i = 4, i = 3, i = 2, i = 1, i = 0
+i = 5, i = 4, i = 3, i = 2, i = 1
+for (let i = numbers.length; i > 0; i--) {
+    console.log('/////////////')
+    console.log(i, numbers[i]);
 }
 
-exampleFunction();
+// Declarați un array numit `numbers` cu următoarele elemente: 1, 2, 3, 4, 5.
+//    - Utilizați o buclă `for` pentru a calcula suma tuturor elementelor din array.
+//    - Afișați suma în consolă.
 
-// console.log(b); //b is not defined
+const numbers2 = [1, 2, 3, 4, 5];
+// 1 + 2 + 3 + 4 + 5 = 15
+// suma = 0;
+// Iteratia 1: suma = suma + 1; 1
+// iteratia 2: suma = suma + 2;
+// ...
+// iteratia 5: suma = suma + 5;
+let suma = 0;
 
-// const - block scoped
-// const - can not be reassigned
+for (let i = 0; i < numbers2.length; i++) {
+    suma += numbers2[i];
+    // console.log(`Suma pentru iteratia ${i} este ${suma}`);
+}
 
-const x = 25;
-x = 40;
-console.log(x);
+console.log('Suma elementelor este: '+ suma);
+
+// Declarați un array numit `names` cu următoarele elemente: "John", "Jane", "Mike", "Anna".
+//    - Utilizați o buclă `for` pentru a crea un nou array care conține lungimea fiecărui nume din array-ul `names`.
+//    - Afișați noul array rezultat în consolă.
+const names2 = ["John", "Janee", "Mikkkkke", "Annnnnna"];
+// const lengths = [4, 5, 8, 8];
+const lengths = []; // array gol
+
+for (let i = 0; i < names2.length; i++) {
+    lengths.push(names2[i].length);
+    console.log(lengths);
+}
+
+console.log('...........')
+console.log(lengths);
