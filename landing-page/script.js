@@ -1,166 +1,169 @@
-// Initializam 20 de elemente, si le punem cu valoarea 0 
-const years = new Array(20).fill(0);
-console.log(years.fill(5, 3));
+// 1. Problema: Calculul mediei
+//    Scrieți o funcție care primește un obiect care conține notele unui student și returnează media acestuia.
+//    Exemplu de input: `{ nota1: 8, nota2: 7, nota3: 9 }`
+//    Exemplu de output: `8`
 
-const person = {
-    'first name': 'John',
-    age: 40, 
-    location: 'New York',
-    children: ['Ana', 'Tom']
+// (8 + 7 +9) /3
+
+// const sum = (a, b) => a+b;
+
+const calcAverage = (marks) => {
+    let sum = 0;
+    const numbers = Object.values(marks); // [8, 7, 9]
+    // numbers.forEach((element)=> sum+=element);
+
+    for (const element of numbers) sum+= element;
+    
+
+    console.log("Media finala", sum/numbers.length);
+
+    // for (let i = 0; i < numbers.length; i++ ) {
+    //     sum += numbers[i];
+    // }
+    // return sum/numbers.length;
+
+    // 1*2*3*4*5 = 5!
+    const result = numbers.reduce((factorial, element) => factorial * element);
+    console.log('Rezultatul nostru este:', result);
 }
-console.log(Object.keys(person)); // ['first name', 'age', 'location', 'children']
-console.log(person.location);
-console.log('Children: ', person['location']);
 
-const person2 = new Object();
-person2.name = 'John';
-person2.age = 40;
-console.log(person2);
+const studentMarks = { nota1: 8, nota2: 7, nota3: 9 }
 
-const results = [
-        {
-            "category": "E",
-            "qid": 1,
-            "number": 1,
-            "ticket": 1,
-            "subject": "1.1",
-            "question": "Под термином «состав транспортных средств» понимается:",
-            "answers": "[\n    \"Состав, сформированный из грузового автомобиля и неисправного легкового автомобиля, который движется по общественной дороге как одно целое.\",\n    \"Состав, сформированный из механического транспортного средства, являющегося тягачом и прицепа или полуприцепа, который движется по общественной дороге как одно целое.\",\n    \"Состав, сформированный из механического транспортного средства, являющегося тягачом и буксируемого механического транспортного средства, который движется по общественной дороге как одно целое.\"\n]",
-            "shuffle": 2,
-            "hint": "Состав транспортных средств - состав, сформированный из механического транспортного средства, являющегося тягачом и прицепа или полуприцепа, который движется по общественной дороге как одно целое. П. 7, абзац 5.",
-            "has_img": false,
-            "md5sum": "6512bd41d9caa6e02c990b0a82652dca"
-        },
-        {
-            "category": "E",
-            "qid": 2,
-            "number": 2,
-            "ticket": 1,
-            "subject": "1.1",
-            "question": "Под термином «прицеп» понимается:",
-            "answers": "[\n    \"Несамоходная механическая система, предназначенная для перевозки людей и/или грузов.\",\n    \"Несамоходная механическая система, оснащённая механизмами, которые могут производить определённые работы.\",\n    \"Транспортное средство, предназначенное для его буксировки механическим транспортным средством.\"\n]",
-            "shuffle": 2,
-            "hint": "Прицеп - транспортное средство, предназначенное для его буксировки механическим транспортным средством. П. 7, абзац 41.",
-            "has_img": false,
-            "md5sum": "b6d767d2f2ed5d21a44b0e5886680cb9"
-        },
-        {
-            "category": "E",
-            "qid": 3,
-            "number": 3,
-            "ticket": 1,
-            "subject": "1.1",
-            "question": "Под термином «полуприцеп» понимается:",
-            "answers": "[\n    \"Прицеп, разрешённая максимальная масса которого не превышает 750 кг.\",\n    \"Прицеп, часть массы которого приходится на механическое транспортное средство, являющееся тягачом.\",\n    \"Одноосный прицеп, который соединяется с механическим транспортным средством, являющимся тягачом, посредством буксирного устройства.\"\n]",
-            "shuffle": 2,
-            "hint": "Полуприцеп - прицеп, часть массы которого приходится на механическое транспортное средство, являющееся тягачом и которое соединяется с ним посредством опорно-сцепного устройства. П. 7, абзац 43.",
-            "has_img": false,
-            "md5sum": "c16a5320fa415530d9583c34fd356ef5"
-        },
-        {
-            "category": "E",
-            "qid": 4,
-            "number": 4,
-            "ticket": 1,
-            "subject": "2.1-2.2 A",
-            "question": "Этот дорожный знак запрещает движение:",
-            "answers": "[\n    \"Только составов транспортных средств, длина которых превышает 20 м.\",\n    \"Только составов транспортных средств, длина которых превышает 24 м.\",\n    \"Грузовых автомобилей и самоходных машин с прицепами любого типа, а также буксировку механических транспортных средств.\",\n    \"Всех транспортных средств с прицепами любого типа, а также буксировку неисправных механических транспортных средств посредством жёсткой сцепки.\"\n]",
-            "shuffle": 3,
-            "hint": "Знак 3.7 «Движение составов транспортных средств запрещено» запрещает движение грузовых автомобилей и самоходных машин с прицепами любого типа, а также буксировку механических транспортных средств. Пояснительная записка к приложению № 3 (III. ЗАПРЕЩАЮЩИЕ И ОГРАНИЧИВАЮЩИЕ ЗНАКИ, 3.7).",
-            "has_img": true,
-            "md5sum": "a1d0c6e83f027227d8461063f4ac58a6"
-        },
-        {
-            "category": "E",
-            "qid": 5,
-            "number": 5,
-            "ticket": 1,
-            "subject": "2.1-2.2 A",
-            "question": "Изображённый на рисунке знак определяет разрешённые направления движения для грузовых автомобилей и составов транспортных средств:",
-            "answers": "[\n    \"Только принадлежащих авторизованным экономическим операторам (АЕО).\",\n    \"Только перевозящих грузы, сопровождаемые предварительной декларацией в электронном виде (TIR-EPD).\",\n    \"Только перевозящих грузы, сопровождаемые книжкой МДП или у которых она отсутствует.\",\n    \"Перечисленных в предыдущих пунктах.\"\n]",
-            "shuffle": 2,
-            "hint": "Знак «Направления движения по полосам» определяет разрешённые направления движения для грузовых автомобилей и составов транспортных средств, которые принадлежат авторизованным экономическим операторам (АЕО) или перевозят грузы, сопровождаемые предварительной декларацией в электронном виде (TIR-EPD), соответственно грузы, сопровождаемые книжкой МДП или у которых она отсутствует. Пояснительная записка к приложению № 3 (V. ИНФОРМАЦИОННО-УКАЗАТЕЛЬНЫЕ ЗНАКИ, a) Информационные, 5.37.4).",
-            "has_img": true,
-            "md5sum": "d82c8d1619ad8173d665453cfb2e55f0"
-        },
-        {
-            "category": "E",
-            "qid": 6,
-            "number": 6,
-            "ticket": 1,
-            "subject": "2.1-2.2 A",
-            "question": "По каким причинам водителю состава транспортных средств, габаритная длина которого (с грузом или без груза) больше обозначенной на знаке, указывается направление движения по маршруту, обозначенному на схеме объезда?",
-            "answers": ["Так как в прямом направлении дорога проходит по мосту, несущая способность которого не позволяет проехать транспортным средствам длиной более 10 м.","Так как в прямом направлении дорога проходит под мостом, где из-за сужения проез-жей части невозможен встречный разъезд транспортных средств длиной более 10 м.", "Так как в прямом направлении есть участок дороги с узкой проезжей частью и крутыми поворотами, где движение и/или встречный разъезд транспортных средств длиной более 10 м затруднены."],
-            "shuffle": 2,
-            "hint": "Чтобы не создавать помех при движении в прямом направлении, что может привести к заторам на дороге, перед участками с узкой проезжей частью, крутыми поворотами, тесной застройкой и т. п., устанавливается знак 5.59.1 «Схема объезда» с изображённым на его фоне знаком 3.18 «Ограничение длины». Водителям транспортных средств (составов транспортных средств), длина которых (с грузом или без груза) больше обозначенной на знаке 3.18, указано направление объезда по маршруту, изображённому на схеме. Пояснительная записка к приложению № 3 (III. ЗАПРЕЩАЮЩИЕ И ОГРАНИЧИВАЮЩИЕ ЗНАКИ, 3.18, V. ИНФОРМАЦИОННО-УКАЗАТЕЛЬНЫЕ ЗНАКИ, b) Указательные, 5.59.1).",
-            "has_img": true,
-            "md5sum": "44f683a84163b35232fe57c2e008bc8c"
-        }
-    ]
+console.log(calcAverage(studentMarks));
 
-    console.log(Object.keys(results[5]).length + 10); // 21
-    console.log("Answer 2", results[5].answers[1]);
+// 2. Problema: Enumerarea obiectului
+//    Scrieți o funcție care primește un obiect și afișează toate perechile cheie-valoare ale 
+// obiectului utilizând o buclă `while`.
+//    Exemplu de input: `{ nume: 'John', varsta: 30, oras: 'New York' }`
+//    Exemplu de output:
+//    ```
+//    nume: John
+//    varsta: 30
+//    oras: New York
+//    ```
 
-//   4. Problema: Numărarea caracterelor
-//    Se dă un șir de caractere și un caracter specificat. 
-// Să se numere câte apariții ale caracterului se găsesc în șir.
-// Hint: incercati console.log(text[index]), in care text = “Hello” si index e orice numar de la 0 la 5. 
-// Se va afisa elementul in pozitia index din stringul text
+const displayObject = (obj) => {
 
-//    Exemplu:
-//    - Intrare: `'Hello World'`, caracter căutat: `'o'`
-//    - Ieșire: `2`
+    // for (const key in obj) {
+    //     console.log(`${key}: ${obj[key]}`);
+    // }
+    const keys = Object.keys(obj); // [ 'nume', 'varsta', 'oras' ]
 
-const paragraph = 'Hello World'; // ['H', 'e', llo World']
-console.log(paragraph.length); //11
+    // let i = 0;
+    // while (i < keys.length) {
+    //     const key = keys[i];
+    //     const value = obj[key];
+    //     console.log(`${key}: ${value}`);
+    //     i++;
+    // }
 
-const numaraAparitii = (text, character) => {
-    let count = 0;
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] === character){
-            count++;
-        }
+    for (let i = 0; i < keys.length; i++){
+        const key = keys[i];
+        console.log(`${key}: ${obj[key]}`);
     }
- 
-    return count;
+
 }
 
-const resultForO = numaraAparitii(paragraph, 'o'); // 2
-const resultForL = numaraAparitii(paragraph, 'l'); 
-console.log(resultForO, resultForL);
+const person = { nume: 'John', varsta: 30, oras: 'New York' }
+displayObject(person);
 
-// While loop
-// while (conditia) {
-//     // codul care va fi executat
-//     //conditia de incrementare
-// }
+// 3. Problema: Căutarea unei proprietăți
+//    Scrieți o funcție care primește un obiect și o cheie și verifică dacă cheia există în 
+// obiect utilizând o buclă `while`.
+//    Exemplu de input: `{ nume: 'John', varsta: 30, oras: 'New York' }, 'varsta'`
+//    Exemplu de output: `true`
 
-const numaraAparitii2 = (text, character) => {
-    let count = 0;
+const denumire = (obj, key) => {
+    const keys = Object.keys(obj); // ['nume', 'varsta', 'orasul']
+
     let i = 0;
-    while (i < text.length) {
-        if (text[i] === character){
-            count++;
-        }
+    while (i < keys.length) {
+        if (keys[i] === key) return true;
         i++;
     }
- 
-    return count;
+
+    return false;
 }
+const person2 = { nume: 'John', varsta: 30, oras: 'New York' };
 
-const number = [1, 2, 3, 4, 5];
+console.log(denumire(person2, 'varsta'));
 
-const sliceArray = (startIndex, endIndex) => {
-    // const startIndex = 1;
-    // const endIndex = number.length;
-    const slicedArray = [];
+
+// for ... in
+
+// for ... of
+
+// forEach -> se afiseaza fiecare element
+
+// map -> []
+
+// 4) Make an array of strings of the names
+const namesOnly = (arr) =>{
     
-    for (let i = startIndex; i < endIndex; i++) {
-        slicedArray.push(number[i]);
-    }
+ 
+    //     const newArray = [];
+    //     for (const element of arr) {
+        //         console.log(element.name); // { name: 'Angelina Jolie', age: 80 }
+        //         newArray.push(element.name);
+        //     }
+        
+        //   return newArray;
 
-    return slicedArray;
+    const seniorPersons = arr.filter(element => element.age >= 18).map(element => `${element.name} can go to the matrix`); // [{name: ..., age...}]
+    const juniorPersons = arr.filter(element => element.age < 18).map(element => `${element.name} is under age!`); // [{name: ..., age...}]
+    console.log([...seniorPersons, ...juniorPersons]);
+
+    return arr.map((element, index) => {
+        if (element.age > 18) {
+            return `${index+1}: ${element.name} can go to the matrix`;
+        } else {
+            return `${index +1}: ${element.name} is under age!`;
+        }
+    });
 }
 
-console.log(sliceArray(2, 4));
-console.log(number.slice(2, 4));
+// ["Angelina Jolie can go to The Matrix", 
+// "Eric Jones is under age!!", 
+// "Paris Hilton is under age!!", 
+// "Kayne West is under age!!", 
+// "Bob Ziroll can go to The Matrix"]
+
+console.log(namesOnly([
+    {
+        name: "Angelina Jolie",
+        age: 80
+    },
+    {
+        name: "Eric Jones",
+        age: 2
+    },
+    {
+        name: "Paris Hilton",
+        age: 5
+    },
+    {
+        name: "Kayne West",
+        age: 16
+    },
+    {
+        name: "Bob Ziroll",
+        age: 100
+    }
+])); 
+// ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
+
+const numbers = [10, 15, 25, 37, 64, 58];
+// array doar cu elementele pare
+const filteredNumbers = numbers.filter(element => element % 2 === 0);
+// const filteredNames = names.filter(element => element === 'Ana');
+console.log(filteredNumbers);
+
+for (const element of numbers) {
+    const filteredArray = [];
+    if (element % 2 === 0){
+        filteredArray.push(element);
+    }
+}
+// if (number[i] % 2 === 0) {
+//     newArray.push(number[i]);
+// } 
