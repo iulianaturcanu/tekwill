@@ -1,169 +1,168 @@
-// 1. Problema: Calculul mediei
-//    Scrieți o funcție care primește un obiect care conține notele unui student și returnează media acestuia.
-//    Exemplu de input: `{ nota1: 8, nota2: 7, nota3: 9 }`
+// const numbers = [5, 3, 6, 8, 26, 30, 30, 100];
+// console.log(numbers.sort((a, b) => {
+//     // descrescatoare
+//     return b - a;
+// }));
+
+// const fruits = [{name: 'banana', price: 140}, 'apple', 'cherry', 'cherry', 'date'];
+// const priorityList = ['cherry', 'apple', 'banana', 'date'];
+
+// const sortedArray = fruits.sort((a, b)=> {
+//     return priorityList.indexOf(a) - priorityList.indexOf(b);
+// })
+
+// console.log({sortedArray});
+// // ordinea crescatoare
+// console.log(fruits.sort());
+
+// // ordinea descrescatoare
+// console.log(fruits.sort((a, b) => {
+//     if (a < b) {
+//         return 1;
+//     } else if (a > b) {
+//         return -1;
+//     } else {
+//         return 0;
+//     }
+// }));
+
+// const products = [{name: 'banana', price: 140}, {name: 'apple', price: 13}, {name: 'cherry', price: 50}];
+
+// const sortedProduct = products.sort((a, b)=> {
+//     return a.price - b.price;
+// })
+
+// console.log(sortedProduct);
+
+// const students = [
+//     { name: 'Karl', age: 22},
+//    { name: 'Alice', age: 22},
+//    { name: 'David', age: 40},
+//    { name: 'Tom', age: 17}
+// ]
+
+// const sortedStudents = students.sort((a, b)=> {
+//     if (a.age === b.age) {
+//         return a.name.localeCompare(b.name);
+//     }
+//     return a.age - b.age;
+// });
+
+// console.log(sortedStudents);
+
+// const finalStudents = [...students, {name: "Tim", age: 60}]
+// console.log({finalStudents});
+// // Destructuring for arrays, objects
+// const myObject = {
+//   key1: 'value1',
+//   key2: 42,
+//   key3: ['apple', 'banana', 'cherry'],
+//   key4: { nestedKey: 'nestedValue' },
+//   key5: true,
+//   key6: null
+// };
+
+// const {key1, key2, key3, key4, key5, key6} = myObject;
+
+// console.log(myObject.key1);
+// console.log(myObject.key2);
+// console.log(myObject.key3);
+// console.log(myObject.key4);
+
+// console.log({key1 ,key2, key3, key4, key5, key6});
+
+// const myArray = [1, 2, 3, 4, 5, 6];
+
+// const [first, second, third] = myArray;
+
+// console.log(first, second);
+// // const first = myArray[0];
+// // const second = myArray[1];
+// // const third = myArray[2];
+
+// // Spread operator ... - raspandirea la elementele unui array sau object
+// const newNumbers = [...myArray, 7, 8]; // [ 1, 2, 3, 4, 5, 6, 7, 8]
+// console.log(newNumbers);
+
+// const arr = [
+//     {
+//         name: "Angelina Jolie",
+//         age: 80
+//     },
+//     {
+//         name: "Eric Jones",
+//         age: 2
+//     },
+//     {
+//         name: "Paris Hilton",
+//         age: 5
+//     },
+//     {
+//         name: "Kayne West",
+//         age: 16
+//     },
+//     {
+//         name: "Bob Ziroll",
+//         age: 100
+//     }
+// ]
+
+// const seniorPersons = arr.filter(element => element.age >= 18).sort((a, b)=> {
+//     return a.name.localeCompare(b.name);
+// }).map(element => `${element.name} can go to the matrix`); // [{name: ..., age...}]
+// const juniorPersons = arr.filter(element => element.age < 18).sort((a, b)=> {
+//     return a.name.localeCompare(b.name);
+// }).map(element => `${element.name} is under age!`); // [{name: ..., age...}]
+// const finalArray = [...seniorPersons, ...juniorPersons];
+
+// console.log(finalArray);
+
+// const person = {
+//         name: "Bob Ziroll",
+//         age: 100
+// };
+
+// const newPerson = {...person, city: 'Chisinau'}
+// console.log(newPerson);
+
+// const { name, ...restKeys } = newPerson;
+// console.log(restKeys);
+
+// const tomFormular = {name: 'Tom', ...restKeys};
+
+// Rest syntax 
+// const numbers = [1, 2, 3, 4, 5, 6];
+// const [first, second, ...rest] = numbers;
+// console.log(rest); // [3, 4, 5, 6]
+
+// [first, second, ...rest]=[1, 2, 3, 4, 5, 6]
+
+// ...rest = 3, 4, 5, 6
+// rest = [3, 4, 5, 6]
+
+// -x = -4 
+// x = 4
+
+// 5. Problema: Numărul de vocale
+//    Scrieți o funcție care primește un șir de caractere și numără câte vocale conține șirul 
+// utilizând o buclă `while`.
+//    Exemplu de input: `Salut, ma numesc Maria'`
 //    Exemplu de output: `8`
 
-// (8 + 7 +9) /3
+const countVowels = (str) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
-// const sum = (a, b) => a+b;
-
-const calcAverage = (marks) => {
-    let sum = 0;
-    const numbers = Object.values(marks); // [8, 7, 9]
-    // numbers.forEach((element)=> sum+=element);
-
-    for (const element of numbers) sum+= element;
-    
-
-    console.log("Media finala", sum/numbers.length);
-
-    // for (let i = 0; i < numbers.length; i++ ) {
-    //     sum += numbers[i];
-    // }
-    // return sum/numbers.length;
-
-    // 1*2*3*4*5 = 5!
-    const result = numbers.reduce((factorial, element) => factorial * element);
-    console.log('Rezultatul nostru este:', result);
-}
-
-const studentMarks = { nota1: 8, nota2: 7, nota3: 9 }
-
-console.log(calcAverage(studentMarks));
-
-// 2. Problema: Enumerarea obiectului
-//    Scrieți o funcție care primește un obiect și afișează toate perechile cheie-valoare ale 
-// obiectului utilizând o buclă `while`.
-//    Exemplu de input: `{ nume: 'John', varsta: 30, oras: 'New York' }`
-//    Exemplu de output:
-//    ```
-//    nume: John
-//    varsta: 30
-//    oras: New York
-//    ```
-
-const displayObject = (obj) => {
-
-    // for (const key in obj) {
-    //     console.log(`${key}: ${obj[key]}`);
-    // }
-    const keys = Object.keys(obj); // [ 'nume', 'varsta', 'oras' ]
-
-    // let i = 0;
-    // while (i < keys.length) {
-    //     const key = keys[i];
-    //     const value = obj[key];
-    //     console.log(`${key}: ${value}`);
-    //     i++;
-    // }
-
-    for (let i = 0; i < keys.length; i++){
-        const key = keys[i];
-        console.log(`${key}: ${obj[key]}`);
-    }
-
-}
-
-const person = { nume: 'John', varsta: 30, oras: 'New York' }
-displayObject(person);
-
-// 3. Problema: Căutarea unei proprietăți
-//    Scrieți o funcție care primește un obiect și o cheie și verifică dacă cheia există în 
-// obiect utilizând o buclă `while`.
-//    Exemplu de input: `{ nume: 'John', varsta: 30, oras: 'New York' }, 'varsta'`
-//    Exemplu de output: `true`
-
-const denumire = (obj, key) => {
-    const keys = Object.keys(obj); // ['nume', 'varsta', 'orasul']
-
+    let count = 0;
     let i = 0;
-    while (i < keys.length) {
-        if (keys[i] === key) return true;
+    while (i < str.length) {
+        if (vowels.includes(str[i])) {
+            console.log(str[i]);
+            count++;
+        }
         i++;
     }
 
-    return false;
-}
-const person2 = { nume: 'John', varsta: 30, oras: 'New York' };
-
-console.log(denumire(person2, 'varsta'));
-
-
-// for ... in
-
-// for ... of
-
-// forEach -> se afiseaza fiecare element
-
-// map -> []
-
-// 4) Make an array of strings of the names
-const namesOnly = (arr) =>{
-    
- 
-    //     const newArray = [];
-    //     for (const element of arr) {
-        //         console.log(element.name); // { name: 'Angelina Jolie', age: 80 }
-        //         newArray.push(element.name);
-        //     }
-        
-        //   return newArray;
-
-    const seniorPersons = arr.filter(element => element.age >= 18).map(element => `${element.name} can go to the matrix`); // [{name: ..., age...}]
-    const juniorPersons = arr.filter(element => element.age < 18).map(element => `${element.name} is under age!`); // [{name: ..., age...}]
-    console.log([...seniorPersons, ...juniorPersons]);
-
-    return arr.map((element, index) => {
-        if (element.age > 18) {
-            return `${index+1}: ${element.name} can go to the matrix`;
-        } else {
-            return `${index +1}: ${element.name} is under age!`;
-        }
-    });
+    return count;
 }
 
-// ["Angelina Jolie can go to The Matrix", 
-// "Eric Jones is under age!!", 
-// "Paris Hilton is under age!!", 
-// "Kayne West is under age!!", 
-// "Bob Ziroll can go to The Matrix"]
-
-console.log(namesOnly([
-    {
-        name: "Angelina Jolie",
-        age: 80
-    },
-    {
-        name: "Eric Jones",
-        age: 2
-    },
-    {
-        name: "Paris Hilton",
-        age: 5
-    },
-    {
-        name: "Kayne West",
-        age: 16
-    },
-    {
-        name: "Bob Ziroll",
-        age: 100
-    }
-])); 
-// ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
-
-const numbers = [10, 15, 25, 37, 64, 58];
-// array doar cu elementele pare
-const filteredNumbers = numbers.filter(element => element % 2 === 0);
-// const filteredNames = names.filter(element => element === 'Ana');
-console.log(filteredNumbers);
-
-for (const element of numbers) {
-    const filteredArray = [];
-    if (element % 2 === 0){
-        filteredArray.push(element);
-    }
-}
-// if (number[i] % 2 === 0) {
-//     newArray.push(number[i]);
-// } 
+console.log(countVowels('Salut, mA numesc Maria'));
