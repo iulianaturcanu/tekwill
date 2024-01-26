@@ -1,168 +1,182 @@
-// const numbers = [5, 3, 6, 8, 26, 30, 30, 100];
-// console.log(numbers.sort((a, b) => {
-//     // descrescatoare
-//     return b - a;
-// }));
+// Function and arrow function
+// this
+// console.log(this);
+// 1. Syntax
 
-// const fruits = [{name: 'banana', price: 140}, 'apple', 'cherry', 'cherry', 'date'];
-// const priorityList = ['cherry', 'apple', 'banana', 'date'];
-
-// const sortedArray = fruits.sort((a, b)=> {
-//     return priorityList.indexOf(a) - priorityList.indexOf(b);
-// })
-
-// console.log({sortedArray});
-// // ordinea crescatoare
-// console.log(fruits.sort());
-
-// // ordinea descrescatoare
-// console.log(fruits.sort((a, b) => {
-//     if (a < b) {
-//         return 1;
-//     } else if (a > b) {
-//         return -1;
-//     } else {
-//         return 0;
-//     }
-// }));
-
-// const products = [{name: 'banana', price: 140}, {name: 'apple', price: 13}, {name: 'cherry', price: 50}];
-
-// const sortedProduct = products.sort((a, b)=> {
-//     return a.price - b.price;
-// })
-
-// console.log(sortedProduct);
-
-// const students = [
-//     { name: 'Karl', age: 22},
-//    { name: 'Alice', age: 22},
-//    { name: 'David', age: 40},
-//    { name: 'Tom', age: 17}
-// ]
-
-// const sortedStudents = students.sort((a, b)=> {
-//     if (a.age === b.age) {
-//         return a.name.localeCompare(b.name);
-//     }
-//     return a.age - b.age;
-// });
-
-// console.log(sortedStudents);
-
-// const finalStudents = [...students, {name: "Tim", age: 60}]
-// console.log({finalStudents});
-// // Destructuring for arrays, objects
-// const myObject = {
-//   key1: 'value1',
-//   key2: 42,
-//   key3: ['apple', 'banana', 'cherry'],
-//   key4: { nestedKey: 'nestedValue' },
-//   key5: true,
-//   key6: null
-// };
-
-// const {key1, key2, key3, key4, key5, key6} = myObject;
-
-// console.log(myObject.key1);
-// console.log(myObject.key2);
-// console.log(myObject.key3);
-// console.log(myObject.key4);
-
-// console.log({key1 ,key2, key3, key4, key5, key6});
-
-// const myArray = [1, 2, 3, 4, 5, 6];
-
-// const [first, second, third] = myArray;
-
-// console.log(first, second);
-// // const first = myArray[0];
-// // const second = myArray[1];
-// // const third = myArray[2];
-
-// // Spread operator ... - raspandirea la elementele unui array sau object
-// const newNumbers = [...myArray, 7, 8]; // [ 1, 2, 3, 4, 5, 6, 7, 8]
-// console.log(newNumbers);
-
-// const arr = [
-//     {
-//         name: "Angelina Jolie",
-//         age: 80
-//     },
-//     {
-//         name: "Eric Jones",
-//         age: 2
-//     },
-//     {
-//         name: "Paris Hilton",
-//         age: 5
-//     },
-//     {
-//         name: "Kayne West",
-//         age: 16
-//     },
-//     {
-//         name: "Bob Ziroll",
-//         age: 100
-//     }
-// ]
-
-// const seniorPersons = arr.filter(element => element.age >= 18).sort((a, b)=> {
-//     return a.name.localeCompare(b.name);
-// }).map(element => `${element.name} can go to the matrix`); // [{name: ..., age...}]
-// const juniorPersons = arr.filter(element => element.age < 18).sort((a, b)=> {
-//     return a.name.localeCompare(b.name);
-// }).map(element => `${element.name} is under age!`); // [{name: ..., age...}]
-// const finalArray = [...seniorPersons, ...juniorPersons];
-
-// console.log(finalArray);
-
-// const person = {
-//         name: "Bob Ziroll",
-//         age: 100
-// };
-
-// const newPerson = {...person, city: 'Chisinau'}
-// console.log(newPerson);
-
-// const { name, ...restKeys } = newPerson;
-// console.log(restKeys);
-
-// const tomFormular = {name: 'Tom', ...restKeys};
-
-// Rest syntax 
-// const numbers = [1, 2, 3, 4, 5, 6];
-// const [first, second, ...rest] = numbers;
-// console.log(rest); // [3, 4, 5, 6]
-
-// [first, second, ...rest]=[1, 2, 3, 4, 5, 6]
-
-// ...rest = 3, 4, 5, 6
-// rest = [3, 4, 5, 6]
-
-// -x = -4 
-// x = 4
-
-// 5. Problema: Numărul de vocale
-//    Scrieți o funcție care primește un șir de caractere și numără câte vocale conține șirul 
-// utilizând o buclă `while`.
-//    Exemplu de input: `Salut, ma numesc Maria'`
-//    Exemplu de output: `8`
-
-const countVowels = (str) => {
-    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-
-    let count = 0;
-    let i = 0;
-    while (i < str.length) {
-        if (vowels.includes(str[i])) {
-            console.log(str[i]);
-            count++;
-        }
-        i++;
+// 2. This binding
+const obj = { 
+    name: 'Ana',
+    age: 24,
+    calculateBirthYear: function() {
+        console.log(2024-this.age);
     }
+}
+// this referinta la obiect
 
-    return count;
+const obj2 = { 
+    name: 'Ana',
+    age: 24,
+    calculateBirthYear: () => {
+        console.log(this);
+    }
 }
 
-console.log(countVowels('Salut, mA numesc Maria'));
+// this - window reference
+console.log(obj.calculateAge);
+
+// 3. Accesability 
+// arrow functions cannot be accessed before initialization
+
+printName();
+
+function printName(){
+    console.log('Ana');
+}
+
+// printSurname();
+const printSurname = () => {
+    console.log('Moraru')
+}
+
+// 4. Objects constructor
+function Person (name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+const john = new Person('John', 30);
+const ana = new Person('Ana', 20);
+// const john = {
+//     name: 'John',
+//     age: 30
+// }
+console.log(john.age, john.name);
+
+// const Person2 = (name, age) => {
+//     this.name = name; // Eroare;
+//     this.age = age; // Eroare;
+// }
+
+// const maria = new Person2('Maria', 34);
+// console.log(maria.name, maria.age);
+
+// JSON
+// JSON -> Object
+// object -> JSON
+
+
+const apiResponse = {
+  "count": 42,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "category": "B",
+      "qid": 1,
+      "number": 1,
+      "ticket": 1,
+      "subject": "1.1",
+      "question": "Под термином «обгон» понимается:",
+      "answers": "[\n    \"Опережение движущегося транспортного средства, связанное с выездом из занимаемой полосы. Движение транспортных средств по одной полосе проезжей части со скоростью большей, чем скорость транспортных средств по соседней полосе, не считается обгоном.\",\n    \"Опережение одного или нескольких транспортных средств, движущихся по левой полосе с меньшей скоростью.\",\n    \"Опережение одного или нескольких транспортных средств, движущихся по правой полосе с меньшей скоростью.\"\n]",
+      "shuffle": 2,
+      "hint": "Обгон - опережение движущегося транспортного средства, связанное с выездом из занимаемой полосы. Движение транспортных средств по одной полосе проезжей части со скоростью большей, чем скорость транспортных средств по соседней полосе, не считается обгоном. П. 7.",
+      "has_img": false,
+      "md5sum": "d3d9446002a44259755d38e6d163e820"
+    },
+    {
+      "category": "B",
+      "qid": 2,
+      "number": 2,
+      "ticket": 1,
+      "subject": "1.1",
+      "question": "Под термином «уступи дорогу» понимается:",
+      "answers": "[\n    \"Прекращение движения транспортного средства с целью устранения препятствия на определённом участке дороги.\",\n    \"Прекращение движения транспортного средства с целью определения реальной дорожной обстановки, в которой находится транспортное средство в данный момент.\",\n    \"Обязанность участника дорожного движения воздержаться от движения, если это вынудит других участников, имеющих преимущество, резко изменить направление движения, скорость или остановиться.\"\n]",
+      "shuffle": 2,
+      "hint": "Уступи дорогу - обязанность участника дорожного движения воздержаться от движения, если это вынудит других участников, имеющих преимущество, резко изменить направление движения, скорость или остановиться. П. 7.",
+      "has_img": false,
+      "md5sum": "b6d767d2f2ed5d21a44b0e5886680cb9"
+    },
+    {
+      "category": "B",
+      "qid": 5,
+      "number": 5,
+      "ticket": 1,
+      "subject": "1.1",
+      "question": "Сколько проезжих частей имеет дорога, по которой Вы движетесь?",
+      "answers": "[\n    \"Одну.\",\n    \"Две.\",\n    \"Четыре.\"\n]",
+      "shuffle": 2,
+      "hint": "Проезжая часть - часть дорожного полотна, предназначенная для движения транспортных средств. Дорога может иметь несколько проезжих частей, отделённых одна от другой разделительными полосами. Разделительная полоса - элемент дороги, выделенный конструктивно и/или посредством разметки, который разделяет смежные проезжие части и который не предназначен для движения и остановки транспортных средств. П. 7.",
+      "has_img": true,
+      "md5sum": "c0c7c76d30bd3dc0efc96f40275bdc0a"
+    },
+    {
+      "category": "B",
+      "qid": 6,
+      "number": 6,
+      "ticket": 1,
+      "subject": "1.1",
+      "question": "Под термином «полоса движения» понимается:",
+      "answers": "[\n    \"Элемент дороги, предназначенный для движения пешеходов, который примыкает к проезжей части или отделён от неё газоном.\",\n    \"Продольная полоса проезжей части, обозначенная или не обозначенная дорожной разметкой, имеющая ширину, достаточную для беспрепятственного движения в один ряд транспортных средств иных, чем двухколёсные.\",\n    \"Часть дороги, как правило с зелеными насаждениями, разделяющая смежные проезжие части.\"\n]",
+      "shuffle": 2,
+      "hint": "Полоса движения - продольная полоса проезжей части, обозначенная или не обозначенная дорожной разметкой, имеющая ширину, достаточную для беспрепятственного движения в один ряд транспортных средств иных, чем двухколёсные. П. 7.",
+      "has_img": false,
+      "md5sum": "7f39f8317fbdb19881f4c628eba02591"
+    },
+  ]
+};
+
+// JSON string -> Object
+
+const Json= JSON.stringify(apiResponse);
+const responseObject = JSON.parse(Json);
+
+// Accesez si sa afisez informatia din objectul 
+console.log('Lista de intrebari:');
+responseObject.results.forEach((result)=> {
+    console.log("Result: ", result.question);
+    JSON.parse(result.answers).forEach((answer, i) => console.log(`Raspuns ${i+1}`, answer))
+})
+
+// Function closure
+const counter = () => {
+    let count = 0;
+
+    const increment = () => {
+        count++;
+        console.log({count});
+    }
+
+    const decrement = () => {
+        count--;
+        console.log({count});
+    }
+
+    return {
+        increment: increment,
+        decrement: decrement
+    }
+}
+
+counter().increment();
+counter().decrement();
+
+// DOM (Document Object Model)
+// 1. Accesarea elementelor html
+// 1.1 getElementById
+const homeSection = document.getElementById('home-screen');
+// 1.2 getElementsByClassName
+const navItems = document.getElementsByClassName('nav-item');
+// 1.3 getElementsByTagName
+const images = document.getElementsByTagName('img');
+// 1.4 querySelector
+const element = document.querySelector('.feature-container li:last-of-type');
+
+// Modificarea stilurilor elementelor
+homeSection.style.backgroundColor = '#f1f1f1';
+navItems[0].style.color = 'red';
+
+homeSection.innerHTML = '<div>Hello world</div>';
+navItems[0].textContent = 'Tekwill';
+
+images[0].setAttribute('src', 'img/feature-1.svg');
+// element.removeAttribute('required')
