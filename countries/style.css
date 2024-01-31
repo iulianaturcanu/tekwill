@@ -1,0 +1,7 @@
+.country-container {
+    display: inline-block;
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 12px;
+}
