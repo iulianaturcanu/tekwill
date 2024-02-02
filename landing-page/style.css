@@ -280,6 +280,12 @@ section#contact-us {
     .contact-form input:last-child {
         grid-area: 5/1/7/2;
     }
+
+    footer div,
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -303,7 +309,7 @@ footer {
     width: 60%;
     margin: 0 auto;
     display: flex;
-    gap: 60px;
+    gap: 30px;
 }
 
 footer div {

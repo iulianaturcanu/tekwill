@@ -5,16 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Country project</title>
 </head>
 
 <body>
-    <!-- <div id="countries">
-    </div> -->
+    <div class="search-container">
+        <button class="show-all-btn" onclick="showAll()">Show all</button>
+        <input type="text" id="search-input" placeholder="Enter country name" oninput="handleInput()">
+        <button id="search-button" onclick="searchCountry()">Search</button>
+        <select id="sort-select">
+            <option value="sort">Sort</option>
+            <option value="name">Sort by name</option>
+            <option value="population">Sort by population</option>
+            <option value="area">Sort by area</option>
+            <option value="currency">Sort by currency</option>
+        </select>
+    </div>
     <div id="countries">
-        <!-- <img src="" alt="">
-        <h2>Denumirea tarii</h2>
-        <h5>Populatia</h5> -->
     </div>
     <script src="script.js"></script>
 </body>

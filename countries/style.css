@@ -5,3 +5,43 @@
     padding: 8px;
     margin: 12px;
 }
+
+.search-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-container input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#search-button,
+.show-all-btn {
+    border: 1px solid #4caf5a;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #4caf5a;
+    color: #fff;
+    cursor: pointer;
+}
+
+#search-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    border-color: gray;
+}
+
+#sort-select {
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.error { 
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
