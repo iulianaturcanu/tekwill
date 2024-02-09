@@ -242,6 +242,9 @@ section#contact-us {
     color: #ffffff;
 }
 
+.title-container {
+    width: 32%;
+}
 
 @media (max-width: 768px) {
     .nav-item {
@@ -293,6 +296,20 @@ section#contact-us {
     .registration {
         min-width: 220px;
     }
+
+    .nav-main.showMenu {
+        background: black;
+        z-index: 100;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .nav-main.showMenu .nav-item {
+        display: block;
+        color: white;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -317,4 +334,8 @@ footer div {
     flex-direction: column;
     gap: 12px;
     color: #ffffff;
+}
+
+.closeIcon.material-icons {
+    display: none;
 }

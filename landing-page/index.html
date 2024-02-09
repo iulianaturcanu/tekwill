@@ -5,6 +5,7 @@
     <meta charset="UTF" -8>
     <title>Figma</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -13,23 +14,31 @@
         <header>
             <h2>Sprivaten</h2>
             <nav class="nav-main">
-                <a href="#home-screen" class="nav-item"> Home</a>
-                <a href="#" class="nav-item"> Product</a>
-                <a href="#" class="nav-item"> Pricing</a>
-                <a href="#" class="nav-item"> Contact</a>
-                <a href="#">
+                <a data-lang="home" href="#home-screen" class="nav-item"></a>
+                <a data-lang="product" href="#" class="nav-item"></a>
+                <a data-lang="pricing" href="#" class="nav-item"></a>
+                <a data-lang="contact" href="#" class="nav-item"></a>
+                <a href="#" class="nav-item">
                     <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
-                <a href="#">
+                <a href="#" class="nav-item">
                     <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
+                <button onclick="switchLanguage(`english`)">Eng</button>
+                <button onclick="switchLanguage(`romanian`)">Ro</button>
             </nav>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span class="menuIcon material-icons">menu</span>
+                <span class="closeIcon material-icons">
+                    close
+                </span>
+            </button>
         </header>
 
         <section id="home-screen">
             <div class="title-container">
-                <h1><strong>We Take Care of<br>the Future </strong></h1>
-                <h4>We know how large objects will act, but things on a small scale.</h4>
-                <button type="text" class="action-btn">Get Qoute Now</button>
-                <button type="text" class="learn-more-btn">Learn More</button>
+                <h1 data-lang="homeTitle"><strong></strong></h1>
+                <h4 data-lang="homeSubtitle"></h4>
+                <button data-lang="quoteBtn" type="text" class="action-btn"></button>
+                <button data-lang="learnMoreBtn" type="text" class="learn-more-btn"></button>
             </div>
             <div class="registration">
                 <h3 class="text-appointment">Book Appointment</h3>

@@ -1,62 +1,47 @@
-// Funtion closure 
-// var, let, const
-// cod sincron/asyncron
-// function vs arrow function
-// DOM
-// Promise 
+const loadLanguage = async (lang) => {
+    // fetch("languages.json")
+    // .then(res => res.json())
+    // .then(data => console.log(data))
 
-// Callback hell - numar mare de callback function, hard to track
-
-const doSomething = (callback) => {
-    setTimeout(()=> callback(), 1000);
+    const response = await fetch("languages.json");
+    const data = await response.json();
+    // 'english' data['english]
+    return data[lang];
 }
 
-const doSomethingElse = (callback) => {
-    setTimeout(()=> callback(), 1000);
+const updateContent = (langData) => {
+    // sa selectez toate elementele care trebuie schimbate
+    // dinamic (forEach) sa schimb continutul din ele 
+    document.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        element.textContent = langData[key];
+    });
 }
 
-const doSomethingMore = (callback) => {
-    setTimeout(()=> callback(), 1000);
+const switchLanguage = (lang) => {
+    localStorage.setItem('lang', lang);
+    loadLanguage(lang).then(langData => updateContent(langData));
 }
 
-doSomething(()=>{
-    doSomethingElse(()=>{
-        doSomethingMore(()=> {
+const language = localStorage.getItem('lang');
+// default value
+switchLanguage( language ?? 'english');
 
-        })
-    })
-})
+const menu = document.querySelector('.nav-main');
+const menuItems = document.querySelector('.nav-item');
+const hamburger = document.querySelector('.hamburger');
+const menuIcon = document.querySelector('.menuIcon');
+const closeIcon = document.querySelector('.closeIcon');
 
-// Pentru cod asincron - Promise, try catch, async await
-// https://restcountries.com/v3.1/all
-// const fetchDataWithPromise = () => {
-//     return new Promise((resolve, reject) => {
-//         fetch('https://restcountries.com/v3.1/all').then(response=> response.json()).then(data => resolve(data));
-//     })
-// }
+const toggleMenu = () => {
 
-// fetchDataWithPromise()
-// .then(result => console.log('Promise: ', result))
-// .catch(error => console.log('Error', error));
-
-// const fetchDataWithTryCatch = async () => {
-//     try {
-//         const response = await fetch('https://restcountries.com/v3.1/all');
-//         const data = response.json();
-//         return data;
-//         // return await response.json();
-//     } catch (error) {
-//         throw error;
-//     }
-// }
-
-// fetchDataWithTryCatch().then(result => console.log(result));
-
-const fetchData = () => {
-    fetch('https://restcountries.com/v3.1/all')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error));
+    if (menu.classList.contains('showMenu')) {
+        menu.classList.remove('showMenu');
+        closeIcon.style.display = "none";
+        menuIcon.style.display = 'block';
+    } else {
+        menu.classList.add('showMenu');
+        closeIcon.style.display = "block";
+        menuIcon.style.display = 'none';
+    }
 }
-
-fetchData();

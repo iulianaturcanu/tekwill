@@ -1,0 +1,22 @@
+{
+    "english": {
+        "home": "Home",
+        "product": "Product",
+        "pricing": "Pricing",
+        "contact": "Contact",
+        "homeTitle": "We care of the Future",
+        "homeSubtitle": "We know how large objects will act, but things on a small scale.",
+        "quoteBtn": "Get Qoute Now",
+        "learnMoreBtn" : "Learn More"
+    },
+    "romanian": {
+        "home": "Acasa",
+        "product": "Produs",
+        "pricing": "Preturi",
+        "contact": "Contacte",
+        "homeTitle": "Ne pasa de viitor",
+        "homeSubtitle": "Stim cum se vor comporta obiectele mari, dar lucrurile la scara mica.",
+        "quoteBtn": "Obtine o oferta",
+        "learnMoreBtn" : "Afla mai mult"
+    }
+}
