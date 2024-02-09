@@ -26,7 +26,7 @@ const fetchData = () => {
     .then(countries => {
         countriesList = countries;
         const countriesContainer = document.getElementById('countries');
-
+        
         countries.forEach((country)=> {
             const countryContainer = createCountryContainer(country);
             countriesContainer.appendChild(countryContainer);
@@ -51,6 +51,13 @@ const showAll =() => {
 const searchCountry = () => {
     const searchInput = document.getElementById('search-input');
     const countryName = searchInput.value.trim();
+
+    const regex = /^[a-zA-Z]+$/;
+    console.log(regex.test(countryName))
+    if(!regex.test(countryName)) {
+        alert('Input invalid');
+        return;
+    }
     fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     .then(response => response.json())
     .then(countries => {
@@ -87,8 +94,10 @@ searchInput.addEventListener('keydown', (event)=> {
 
 handleInput()
 
-const array =  ['Ana', "Maria", "Albert"];
+let array =  ['Ana', "Maria", "Albert"];
 array.sort((a, b) => a-b)
+array = [];
+console.log(array);
 // setTimeout(()=> console.log(countriesList), 1000);
 
 const sortCountries = (sortParam) => {

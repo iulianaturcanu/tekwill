@@ -5,10 +5,31 @@
     <meta charset="UTF-8">
     <title>The Code Magazine</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        const contentEng = {
+            "title": "Hello World",
+            "description": "This is a simple hello world example",
+            "content": "Hello World"
+        }
+
+        const contentRo = {
+            "title": "Salut lume",
+            "description": "This is a simple hello world example",
+            "content": "Hello World"
+        }
+
+        const title = document.querySelector('#title');
+        if (user.language === 'ro') {
+            title.innerHTML = contentRo.title;
+        } else {
+            title.innerHTML = contentEng.title;
+        }
+    </script>
 </head>
 
 <body>
     <img id="facebook-icon" src="./facebook.svg" style="margin: 40px; height: 40px;">
+    <div id="title"></div>
     <section id="form-section" class="form-container">
         <!-- Inputs -->
         <form action="">
