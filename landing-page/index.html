@@ -22,8 +22,8 @@
                     <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
                 <a href="#" class="nav-item">
                     <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
-                <button onclick="switchLanguage(`english`)">Eng</button>
-                <button onclick="switchLanguage(`romanian`)">Ro</button>
+                <button class="nav-item" onclick="switchLanguage(`english`)">Eng</button>
+                <button class="nav-item" onclick="switchLanguage(`romanian`)">Ro</button>
             </nav>
             <button class="hamburger" onclick="toggleMenu()">
                 <span class="menuIcon material-icons">menu</span>
@@ -31,6 +31,20 @@
                     close
                 </span>
             </button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">X</span>
+                    <a data-lang="home" href="#home-screen" class="nav-item">Home</a>
+                    <a data-lang="product" href="#" class="nav-item">Product</a>
+                    <a data-lang="pricing" href="#" class="nav-item">Pricing</a>
+                    <a data-lang="contact" href="#" class="nav-item">Contact</a>
+                    <a href="#" class="nav-item">
+                        <img alt="Search" src="loupe.svg" alt="Loupe icon" class="loupe-icon"></a>
+                    <a href="#" class="nav-item">
+                        <img src="shopping-cart.svg" alt="Shopping-cart" class="shopping-cart-icon"></a>
+                </div>
+            </div>
         </header>
 
         <section id="home-screen">
